@@ -6,9 +6,9 @@
  */
 int _strlen(char *s)
 {
-	int len = o;
-
-	while (*s++);
+	int len = 0;
+	
+	while (*s++)
 	{
 		len++;
 	}
