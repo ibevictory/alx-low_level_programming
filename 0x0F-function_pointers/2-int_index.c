@@ -1,3 +1,7 @@
+/**
+ * File: 2-int_index.c
+ * Auth: Ibe Victory
+ */
 #include "function_pointers.h"
 #include <stdio.h>
 #include <stdlib.h>
