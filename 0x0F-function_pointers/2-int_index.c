@@ -1,44 +1,27 @@
-/**
- * File: 2-int_index.c
- * Auth: Ibe Victory
- */
-#include "function_pointers.h"
 #include <stdio.h>
-#include <stdlib.h>
+#include "function_pointers.h"
 /**
- * main - check the code
- * Return: Always 0.
- */
-int main(void)
-{
-	int array[20] = {0, -98, 98, 402, 1024, 4096, -1024, -98, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 98};
-	int index;
-
-	index = int_index(array, 20, is_98);
-	printf("%d\n", index);
-	index = int_index(array, 20, abs_is_98);
-	printf("%d\n", index);
-	index = int_index(array, 20, is_strictly_positive);
-	printf("%d\n", index);
-	return (0);
-}
-/**
- * int_index - Searches for an integer in an array of integers.
- * @array: The array of integers.
- * @size: The size of the array.
- * @cmp: A pointer to the function to be used to compare values.
- * Return: If no element matches or size <= 0 - -1.
+ * int_index - earches for an integer
+ * @array: array to search in
+ * @size: size of the array
+ * @cmp: pointer to the comparing function
+ *
+ * Return: index of the first element for which
+ * the cmp function does not return 0, or -1 if no match is found
+ * or size is negative
  */
 int int_index(int *array, int size, int (*cmp)(int))
 {
 	int i;
 
-	if (array == NULL || cmp == NULL)
-		return (-1);
-	for (i = 0; i < size; i++)
+	if (array && cmp)
 	{
-		if (cmp(array[i]) != 0)
-			return (i);
+		for (i = 0; i < size; i++)
+		{
+			if (cmp(array[i]) != 0)
+				return (i);
+		}
 	}
+
 	return (-1);
 }
