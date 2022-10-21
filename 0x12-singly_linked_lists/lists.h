@@ -1,5 +1,5 @@
-#ifndef _MAIN_H_
-#define _MAIN_H_
+#ifndef _LISTS_H_
+#define _LISTS_H_
 
 #include <stddef.h>
 
@@ -26,4 +26,4 @@ list_t *add_node(list_t **head, const char *str);
 list_t *add_node_end(list_t **head, const char *str);
 void free_list(list_t *head);
 
-#endif /* _MAIN_H_ */
+#endif /* _LISTS_H_ */
