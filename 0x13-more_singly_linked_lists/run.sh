@@ -1,6 +1,5 @@
 #!/bin/bash
 
-victory
 
 git add .
 
